@@ -8,21 +8,30 @@
   </head>
 <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
 
-  <!-- Header (igual que catálogo y formulario) -->
-  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Egus-Tech</h1>
-      <button id="menu-btn" class="sm:hidden text-2xl">☰</button>
-      <nav>
-        <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
-          <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
-          <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
-          <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
-          <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg relative">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-2xl">Egus-Tech</h1>
+    <button id="menu-btn" class="sm:hidden text-3xl focus:outline-none">☰</button>
+    <nav>
+      <!-- Menú principal (desktop) -->
+      <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
+        <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+        <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
+        <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
+        <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Menú móvil -->
+  <ul id="mobile-menu" class="hidden flex-col bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium sm:hidden absolute top-full left-0 w-full shadow-md">
+    <li><a href="/" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Inicio</a></li>
+    <li><a href="/curiculum" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Curriculum</a></li>
+    <li><a href="/formulario" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Formulario</a></li>
+    <li><a href="/catalogo" class="block px-6 py-3 hover:bg-blue-700">Catalogo</a></li>
+  </ul>
+</header>
 
 <main class="flex-grow">
   <!-- Hero -->
@@ -67,9 +76,10 @@
   <!-- Script menú -->
   <script>
     const btn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    
     btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("hidden");
     });
   </script>
 

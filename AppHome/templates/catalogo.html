@@ -8,21 +8,30 @@
   </head>
   <body class="bg-gray-100 text-gray-800 font-sans">
     
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
-      <div class="container mx-auto flex items-center justify-between p-4">
-        <h1 class="text-2xl font-bold">Egus-Tech</h1>
-        <button id="menu-btn" class="sm:hidden text-2xl">☰</button>
-        <nav>
-          <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
-            <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
-            <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
-            <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
-            <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg relative">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-2xl">Egus-Tech</h1>
+    <button id="menu-btn" class="sm:hidden text-3xl focus:outline-none">☰</button>
+    <nav>
+      <!-- Menú principal (desktop) -->
+      <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
+        <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+        <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
+        <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
+        <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Menú móvil -->
+  <ul id="mobile-menu" class="hidden flex-col bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium sm:hidden absolute top-full left-0 w-full shadow-md">
+    <li><a href="/" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Inicio</a></li>
+    <li><a href="/curiculum" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Curriculum</a></li>
+    <li><a href="/formulario" class="block px-6 py-3 border-b border-white/20 hover:bg-blue-700">Formulario</a></li>
+    <li><a href="/catalogo" class="block px-6 py-3 hover:bg-blue-700">Catalogo</a></li>
+  </ul>
+</header>
     
     <!-- Main -->
     <main class="container mx-auto mt-10 p-4">
@@ -40,7 +49,7 @@
             <li><strong>Idioma:</strong> Español</li>
             <li><strong>Tamaño:</strong> 250KB</li>
           </ul>
-          <a href="juegos-snes/game/ALIEN VS PREDADOR.SMC" 
+          <a href="{% static 'juegos-snes/game/ALIEN VS PREDADOR.SMC' %}" 
              download="ALIEN VS PREDADOR.SMC"
              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
              ⬇ Descargar
@@ -56,7 +65,7 @@
             <li><strong>Idioma:</strong> Español</li>
             <li><strong>Tamaño:</strong> 250KB</li>
           </ul>
-          <a href="juegos-snes/game/Chrono Trigger.smc" 
+          <a href="{% static 'juegos-snes/game/Chrono Trigger.smc' %}" 
              download="Chrono Trigger.smc"
              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
              ⬇ Descargar
@@ -72,7 +81,7 @@
             <li><strong>Idioma:</strong> Español</li>
             <li><strong>Tamaño:</strong> 250KB</li>
           </ul>
-          <a href="juegos-snes/game/Demon's Crest.smc" 
+          <a href="{% static 'juegos-snes/game/Demons Crest.smc' %}" 
              download="Demon's Crest.smc"
              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
              ⬇ Descargar
@@ -88,7 +97,7 @@
             <li><strong>Idioma:</strong> Español</li>
             <li><strong>Tamaño:</strong> 250KB</li>
           </ul>
-          <a href="juegos-snes/game/Mega Man 7.smc" 
+          <a href="{% static 'juegos-snes/game/MegaMan7.smc' %}" 
              download="Mega Man 7.smc"
              class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
              ⬇ Descargar
@@ -105,13 +114,14 @@
       <p>© 2025 Egus-Tech | Catálogo de Juegos SNES</p>
     </footer>
 
-    <!-- Script menú -->
-    <script>
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
+  <!-- Script menú -->
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    
+    btn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
   </body>
 </html>
