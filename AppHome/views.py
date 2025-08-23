@@ -13,3 +13,11 @@ def showPresentacion(request):
 
 def showCatalogo(request):
     return render(request, "catalogo.html")
+
+
+def showCurriculum(request):
+    return render(request, "curiculum.html")
+
+
+def showFormulario(request):
+    return render(request, "formulario.html")

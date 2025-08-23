@@ -116,14 +116,14 @@ USE_TZ = True
 
 
 ## * para guardar imgenes css img js
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'     #La URL pública
 ## * va junto con el anterior
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'AppHome/static')
+    os.path.join(BASE_DIR, 'AppHome/static')    #<img src="{% static 'images/bomberman3.png' %}" alt="Super Bomberman">
     ]
 
 
-## * pra despliegue y whitenoise (funciono 9:53pm 22/08/2025)
+## * pra despliegue y whitenoise (funciono 9:53pm 22/08/2025) railway
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 

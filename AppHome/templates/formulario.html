@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Egus-Tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-600 to-purple-700 min-h-screen flex flex-col">
+
+  <!-- Header -->
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-2xl">Egus-Tech</h1>
+    <button id="menu-btn" class="sm:hidden text-2xl">☰</button>
+    <nav>
+      <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
+        <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+        <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
+        <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
+        <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Main centrado -->
+  <main class="flex flex-1 items-center justify-center">
+    <form class="bg-white rounded-xl shadow-2xl w-96 overflow-hidden">
+      
+      <!-- Título -->
+      <h2 class="bg-gradient-to-r from-blue-600 to-purple-700 p-5 text-white text-2xl font-bold text-center">
+        🔐 Iniciar Sesión
+      </h2>
+
+      <!-- Campos -->
+      <div class="flex flex-col p-6 space-y-5">
+        <div>
+          <label class="block font-semibold text-gray-700">Usuario</label>
+          <input type="text" placeholder="Ingrese usuario"
+            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700">Contraseña</label>
+          <input type="password" placeholder="Ingrese contraseña"
+            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- Botón login -->
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition">
+          🚀 Ingresar
+        </button>
+
+        <!-- Links extra -->
+        <div class="flex justify-between text-sm text-gray-500">
+          <a href="#" class="hover:text-blue-600">¿Olvidaste tu contraseña?</a>
+          <a href="#" class="hover:text-blue-600">Crear cuenta</a>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-4 text-center text-sm">
+    © 2025 Egus-Tech | Todos los derechos reservados
+  </footer>
+
+  <!-- Script menú -->
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

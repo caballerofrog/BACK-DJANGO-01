@@ -3,15 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Inicio</title>
   </head>
-  <body>
-    <h1>INICIO</h1>
+<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
 
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/presentacion">Presentacion</a></li>
-      <li><a href="/catalogo">Catalogo</a></li>
-    </ul>
-  </body>
+  <!-- Header (igual que catálogo y formulario) -->
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Egus-Tech</h1>
+      <button id="menu-btn" class="sm:hidden text-2xl">☰</button>
+      <nav>
+        <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
+          <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+          <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
+          <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
+          <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main class="flex-grow">
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 text-center">
+    <h1 class="text-4xl font-bold mb-4">🚀 Bienvenido a Egus-Tech</h1>
+    <p class="text-lg mb-6">Desarrollador Web | Juegos Retro | Innovación Tecnológica</p>
+    <a href="/curiculum" 
+       class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition">
+       Ver mi Curriculum
+    </a>
+  </section>
+
+  <!-- Cards de acceso rápido -->
+  <section class="container mx-auto py-12 px-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+      <h2 class="text-xl font-bold mb-2">📑 Curriculum</h2>
+      <p class="text-gray-600 mb-4">Conoce mi experiencia profesional y habilidades.</p>
+      <a href="/curiculum" class="text-blue-600 font-semibold hover:underline">Ver más</a>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+      <h2 class="text-xl font-bold mb-2">📝 Formulario</h2>
+      <p class="text-gray-600 mb-4">Contáctame o inicia sesión en la plataforma.</p>
+      <a href="/formulario" class="text-blue-600 font-semibold hover:underline">Ir ahora</a>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+      <h2 class="text-xl font-bold mb-2">🎮 Catálogo</h2>
+      <p class="text-gray-600 mb-4">Descarga juegos clásicos de Super Nintendo.</p>
+      <a href="/catalogo" class="text-blue-600 font-semibold hover:underline">Explorar</a>
+    </div>
+
+  </section>
+</main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+    © 2025 Egus-Tech | Todos los derechos reservados
+  </footer>
+
+  <!-- Script menú -->
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
 </html>

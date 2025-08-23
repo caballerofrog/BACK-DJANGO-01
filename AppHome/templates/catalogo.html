@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head>{% load static %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Catalogo</title>
   </head>
-  <body>
-    <h1>CATALOGO</h1>
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/presentacion">Presentacion</a></li>
-      <li><a href="/catalogo">Catalogo</a></li>
-    </ul>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+      <div class="container mx-auto flex items-center justify-between p-4">
+        <h1 class="text-2xl font-bold">Egus-Tech</h1>
+        <button id="menu-btn" class="sm:hidden text-2xl">☰</button>
+        <nav>
+          <ul id="menu" class="hidden sm:flex space-x-6 font-medium">
+            <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+            <li><a href="/curiculum" class="hover:text-yellow-300">Curriculum</a></li>
+            <li><a href="/formulario" class="hover:text-yellow-300">Formulario</a></li>
+            <li><a href="/catalogo" class="hover:text-yellow-300">Catalogo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- Main -->
+    <main class="container mx-auto mt-10 p-4">
+      <h2 class="text-3xl font-bold text-center text-purple-700 mb-10">🎮 Catálogo Super Nintendo</h2>
+
+      <!-- Grid de juegos -->
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4 flex flex-col">
+          <img src="{% static 'juegos-snes/alien-depredator.png' %}" alt="Alien vs Depredator"
+               class="w-full h-48 object-cover rounded-md">
+          <ul class="mt-4 text-sm text-gray-700 space-y-1 flex-1">
+            <li><strong>Game:</strong> Alien vs Depredator</li>
+            <li><strong>Idioma:</strong> Español</li>
+            <li><strong>Tamaño:</strong> 250KB</li>
+          </ul>
+          <a href="juegos-snes/game/ALIEN VS PREDADOR.SMC" 
+             download="ALIEN VS PREDADOR.SMC"
+             class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
+             ⬇ Descargar
+          </a>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4 flex flex-col">
+          <img src="{% static 'juegos-snes/chrono-trigger.jpg' %}" alt="Chrono Trigger"
+               class="w-full h-48 object-cover rounded-md">
+          <ul class="mt-4 text-sm text-gray-700 space-y-1 flex-1">
+            <li><strong>Game:</strong> Chrono Trigger</li>
+            <li><strong>Idioma:</strong> Español</li>
+            <li><strong>Tamaño:</strong> 250KB</li>
+          </ul>
+          <a href="juegos-snes/game/Chrono Trigger.smc" 
+             download="Chrono Trigger.smc"
+             class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
+             ⬇ Descargar
+          </a>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4 flex flex-col">
+          <img src="{% static 'juegos-snes/demon-crest.png' %}" alt="Demon Crest"
+               class="w-full h-48 object-cover rounded-md">
+          <ul class="mt-4 text-sm text-gray-700 space-y-1 flex-1">
+            <li><strong>Game:</strong> Demon Crest</li>
+            <li><strong>Idioma:</strong> Español</li>
+            <li><strong>Tamaño:</strong> 250KB</li>
+          </ul>
+          <a href="juegos-snes/game/Demon's Crest.smc" 
+             download="Demon's Crest.smc"
+             class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
+             ⬇ Descargar
+          </a>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition p-4 flex flex-col">
+          <img src="{% static 'juegos-snes/megaman-7.png' %}" alt="Megaman 7"
+               class="w-full h-48 object-cover rounded-md">
+          <ul class="mt-4 text-sm text-gray-700 space-y-1 flex-1">
+            <li><strong>Game:</strong> Megaman 7</li>
+            <li><strong>Idioma:</strong> Español</li>
+            <li><strong>Tamaño:</strong> 250KB</li>
+          </ul>
+          <a href="juegos-snes/game/Mega Man 7.smc" 
+             download="Mega Man 7.smc"
+             class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center font-medium">
+             ⬇ Descargar
+          </a>
+        </div>
+
+        <!-- Repite la misma estructura para los demás juegos -->
+        
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center mt-10">
+      <p>© 2025 Egus-Tech | Catálogo de Juegos SNES</p>
+    </footer>
+
+    <!-- Script menú -->
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
