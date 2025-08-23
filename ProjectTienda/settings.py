@@ -123,7 +123,7 @@ STATICFILES_DIRS = [
     ]
 
 
-## * pra despliegue y whitenoise
+## * pra despliegue y whitenoise (funciono 9:53pm 22/08/2025)
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
