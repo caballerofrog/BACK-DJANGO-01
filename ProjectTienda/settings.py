@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
+
 
 load_dotenv()
 
@@ -20,11 +22,11 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-l^9)s&&97y=36--a1hx*kf#%lck3f*9hw0#@*f8fw8@n_z(bw^'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["127.0.0.1","back-django-01-production.up.railway.app"]
+ALLOWED_HOSTS = ["127.0.0.1",os.getenv("ALLOWED_HOSTS")]
 
 
 # Application definition
@@ -73,10 +75,7 @@ WSGI_APPLICATION = 'ProjectTienda.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
